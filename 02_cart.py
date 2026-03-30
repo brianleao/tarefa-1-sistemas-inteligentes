@@ -16,7 +16,6 @@ SEED = 42
 
 FEATURES = ['idade', 'fc', 'fr', 'pas', 'spo2', 'temp', 'pr', 'sg', 'fx', 'queim']
 TARGET = 'tri'
-NOMES_CLASSES = ['verde(0)', 'amarelo(1)', 'vermelho(2)', 'preto(3)']
 
 os.makedirs("modelos", exist_ok=True)
 os.makedirs("resultados", exist_ok=True)

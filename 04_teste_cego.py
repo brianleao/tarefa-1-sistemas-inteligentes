@@ -23,8 +23,6 @@ import joblib
 SEED = 42
 FEATURES = ['idade', 'fc', 'fr', 'pas', 'spo2', 'temp', 'pr', 'sg', 'fx', 'queim']
 TARGET = 'tri'
-CLASSES = ['verde(0)', 'amarelo(1)', 'vermelho(2)', 'preto(3)']
-CORES_NOMES = {0: "verde", 1: "amarelo", 2: "vermelho", 3: "preto"}
 
 os.makedirs("modelos", exist_ok=True)
 os.makedirs("resultados", exist_ok=True)
@@ -178,8 +176,6 @@ plt.close()
 print("\nSalvo: resultados/figuras/matrizes_confusao_teste_cego.png")
 
 # f1 por classe
-from sklearn.metrics import f1_score as f1_per_class
-
 f1_cart_cls = f1_score(y_test, y_pred_cart, average=None, labels=[0, 1, 2, 3], zero_division=0)
 f1_mlp_cls = f1_score(y_test, y_pred_mlp, average=None, labels=[0, 1, 2, 3], zero_division=0)
 
