@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python 01_gerar_dados.py)",
+      "Bash(python3 01_gerar_dados.py)",
+      "Bash(conda env:*)",
+      "Read(//Users/brianleao/miniforge3/**)",
+      "Read(//Users/brianleao/anaconda3/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Users/brianleao/opt/miniconda3/**)",
+      "Read(//Users/brianleao/opt/anaconda3/**)",
+      "Read(//Users/brianleao/Documents/Sistemas Inteligentes/**)",
+      "Read(//Users/brianleao/**)",
+      "Bash(\"/Users/brianleao/Documents/Sistemas Inteligentes/Tarefa 1 - Classificação/.venv/bin/python3\" 01_gerar_dados.py)",
+      "Bash(\"/Users/brianleao/Documents/Sistemas Inteligentes/Tarefa 1 - Classificação/.venv/bin/python3\" 02_cart.py)",
+      "Bash(\"/Users/brianleao/Documents/Sistemas Inteligentes/Tarefa 1 - Classificação/.venv/bin/python3\" 03_mlp.py)",
+      "Bash(\"/Users/brianleao/Documents/Sistemas Inteligentes/Tarefa 1 - Classificação/.venv/bin/python3\" 04_teste_cego.py)"
+    ]
+  }
+}
