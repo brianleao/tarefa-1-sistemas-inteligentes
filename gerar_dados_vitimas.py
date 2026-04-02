@@ -94,7 +94,7 @@ def gerar_dataset_vitimas(n_vitimas=100, media_idade=35, desvio_idade=5,
 
         # --- Ruído em AVPU ---
         avpu_val = random.choice(params['avpu'])
-        if random.random() < nivel_ruido:  # com probabilidade nivel_ruido, troca para outro valor
+        if random.random() < nivel_ruido:
             outros = [v for v in params['avpu'] if v != avpu_val]
             if outros:
                 avpu_val = random.choice(outros)
@@ -136,7 +136,6 @@ def gerar_dataset_vitimas(n_vitimas=100, media_idade=35, desvio_idade=5,
 
 
 def main():
-    # você pode alterar os parâmetros conforme necessário
     df = gerar_dataset_vitimas(
         n_vitimas=10,
         media_idade=25,
