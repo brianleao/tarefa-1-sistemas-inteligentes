@@ -143,13 +143,13 @@ for avg in ["weighted", "macro"]:
     print(f"  F1-score  ({avg}){'':<8} {f_cart:>10.4f} {f_mlp:>10.4f}")
     print()
 
-print("COMPARACAO VALIDACAO x TESTE CEGO")
+print("COMPARACAO VALIDACAO x TESTE CEGO (f1_macro)")
 print(f"{'Modelo':<10} {'f1_val_medio':>14} {'f1_teste':>10} {'diferenca':>12}")
 print("-" * 48)
-print(f"{'CART':<10} {cart_summary['mean_val_f1']:>14.4f} {f1w_cart:>10.4f} "
-      f"{abs(cart_summary['mean_val_f1'] - f1w_cart):>12.4f}")
-print(f"{'MLP':<10} {mlp_summary['mean_val_f1']:>14.4f} {f1w_mlp:>10.4f} "
-      f"{abs(mlp_summary['mean_val_f1'] - f1w_mlp):>12.4f}")
+print(f"{'CART':<10} {cart_summary['mean_val_f1']:>14.4f} {f1m_cart:>10.4f} "
+      f"{abs(cart_summary['mean_val_f1'] - f1m_cart):>12.4f}")
+print(f"{'MLP':<10} {mlp_summary['mean_val_f1']:>14.4f} {f1m_mlp:>10.4f} "
+      f"{abs(mlp_summary['mean_val_f1'] - f1m_mlp):>12.4f}")
 
 # matrizes de confusao
 nomes_curtos = ["verde", "amarelo", "vermelho", "preto"]

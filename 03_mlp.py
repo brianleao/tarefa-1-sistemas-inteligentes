@@ -69,7 +69,7 @@ clf = GridSearchCV(
     pipe,
     param_grid,
     cv=cv,
-    scoring='f1_weighted',
+    scoring='f1_macro',
     return_train_score=True,
     n_jobs=-1,
     verbose=1,
@@ -78,7 +78,7 @@ clf = GridSearchCV(
 n_combinacoes = 5 * 2 * 2
 print(f"\nIniciando GridSearchCV:")
 print(f"  {n_combinacoes} combinacoes x {N_FOLDS} folds = {n_combinacoes * N_FOLDS} fits")
-print(f"  Scoring: f1_weighted  |  CV: StratifiedKFold(n={N_FOLDS})\n")
+print(f"  Scoring: f1_macro  |  CV: StratifiedKFold(n={N_FOLDS})\n")
 clf.fit(X, y)
 
 # salva resultados
@@ -86,7 +86,7 @@ results = pd.DataFrame(clf.cv_results_)
 results.to_csv("resultados/mlp_cv_results.csv", index=False)
 
 # top-10 configuracoes
-print("\nTOP 10 CONFIGURACOES (por f1_weighted medio de validacao):")
+print("\nTOP 10 CONFIGURACOES (por f1_macro medio de validacao):")
 cols_exibir = [
     'param_mlp__hidden_layer_sizes',
     'param_mlp__activation',
@@ -155,7 +155,7 @@ joblib.dump(clf.best_estimator_, "modelos/mlp_melhor.pkl")
 summary = {
     "best_params": {k: str(v) for k, v in best_params.items()},
     "n_folds": N_FOLDS,
-    "scoring": "f1_weighted",
+    "scoring": "f1_macro",
     "mean_train_f1": float(mean_train),
     "mean_val_f1": float(mean_val),
     "vies": float(abs(mean_train - mean_val)),
